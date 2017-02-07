@@ -7,24 +7,24 @@ db_user="mmuser"
 db_root_pwd=$(sudo cat /etc/yunohost/mysql)
 
 # Stop service
-sudo supervisorctl stop mattermost
+#sudo supervisorctl stop mattermost
 
 # Remove sources and data
-sudo rm -rf /var/www/mattermost
-sudo rm -rf /home/yunohost.app/mattermost
+#sudo rm -rf /var/www/mattermost
+#sudo rm -rf /home/yunohost.app/mattermost
 
 # Remove database
-mysql -u root -p$db_root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
+#mysql -u root -p$db_root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
 
 # Remove uploaded files
 
 # Delete SMTP user
-sudo userdel mattermost
+#sudo userdel mattermost
 
 # Remove configuration files
-sudo rm -f /etc/nginx/conf.d/$domain.d/mattermost.conf
-sudo rm /etc/supervisor/conf.d/mattermost.conf
+#sudo rm -f /etc/nginx/conf.d/$domain.d/mattermost.conf
+#sudo rm /etc/supervisor/conf.d/mattermost.conf
 
 # Remove log files
-sudo rm -f /var/log/mattermost.log
+#sudo rm -f /var/log/mattermost.log
 

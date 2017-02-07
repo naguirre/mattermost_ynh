@@ -56,7 +56,7 @@ function exit_properly
 {
     set +e
     root_pwd=$(sudo cat /etc/yunohost/mysql)
-    mysql -u root -p$root_pwd -e "DROP DATABASE mattermost ; DROP USER mmuser@localhost ;"
+#    mysql -u root -p$root_pwd -e "DROP DATABASE mattermost ; DROP USER mmuser@localhost ;"
 
     sudo userdel mattermost
     sudo rm -Rf "$final_path"
